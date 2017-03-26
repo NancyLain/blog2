@@ -1,0 +1,22 @@
+<h1>Editing Comment</h1>
+
+<%= form_for ([@micropost, @comment]) do |f| %>
+
+    <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    </div>
+
+    <div class="field">
+      <%= f.label :user_id %>
+      <%= f.number_field :user_id %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>
+
+<%#= link_to 'Show', @comment %> |
+<%= link_to 'Back', edit_micropost_comment_path %>
