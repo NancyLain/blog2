@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+  font-family: Roboto, sans-serif;
+  margin:2%;
+}
+
+/* menu base styles */
+@media screen and (min-width: 768px){
+  nav {
+    background: #333;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    a {
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      display: block;
+      padding: 10px;
+    }
+
+    a:hover {
+      background-color: #555;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

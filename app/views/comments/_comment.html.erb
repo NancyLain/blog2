@@ -1,18 +1,13 @@
-<p id="notice"><%= notice %></p>
- <% if user_signed_in? %>
-            <tr id="comment">
-           <td><%= comment.body %></td>
-           <td><%= comment.user_id %> </td>
-           <!--<td><%= @comment.user %> </td>-->
+<% if user_signed_in? %>
+  <tr id="comment">
+  <td><%= comment.body %></td>
+  <td><%= comment.user_id %> </td>
 
-           <% if can? :update, comment %>
-           <td><%= link_to "Edit" , edit_micropost_comment_path(comment.micropost, comment) %> </td>
-            <% end %>
-           <% if can? :destroy, comment %>
-           <td> <%= link_to "Delete" , micropost_comment_path(comment.micropost, comment), method: :delete, data: {confirm: "Are you sure ?"}, :remote => true, :class => 'delete_comment'  %> </td>
-         <% end %>
-         </tr>
-   <% end %>
-
-
-
+  <% if can? :update, comment %>
+  <td><%= link_to "Edit" , edit_micropost_comment_path(comment.micropost, comment) %> </td>
+    <% end %>
+  <% if can? :destroy, comment %>
+  <td> <%= link_to "Delete" , micropost_comment_path(comment.micropost, comment), method: :delete, data: {confirm: "Are you sure ?"}, :remote => true, :class => 'delete_comment'  %> </td>
+  <% end %>
+  </tr>
+  <% end %>

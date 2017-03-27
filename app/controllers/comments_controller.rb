@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   before_action :find_micropost
   before_action :find_comment, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!
+
+
   skip_authorize_resource :only => :current_user
 
 
@@ -21,10 +24,8 @@ class CommentsController < ApplicationController
 
   def create
 
-    # @comment = Comment.new(comment_params)
     @comment = current_user.comments.new(comment_params)
     @comment.micropost_id = @micropost.id
-    @comment.user_id = current_user.id
 
     if @comment.save
       respond_to do |format|
