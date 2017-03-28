@@ -8,16 +8,16 @@
     </data-source>
     <data-source name="Rails blog: test" uuid="99660ee8-e99d-4ec2-a214-17c3b5006068">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <secret-storage>memory</secret-storage>
       <user-name>NancyLain</user-name>
+      <introspection-schemas>blog_test:public</introspection-schemas>
     </data-source>
     <data-source name="Rails blog: development" uuid="3dc8c294-5592-40a1-b28d-cd5cc21b0851">
       <database-info product="PostgreSQL" version="9.5.6" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>memory</secret-storage>
       <user-name>postgres</user-name>
+      <introspection-schemas>blog_development:public</introspection-schemas>
     </data-source>
   </component>
 </project>

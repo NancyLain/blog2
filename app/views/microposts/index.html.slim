@@ -1,23 +1,30 @@
-div id="post"
-p id="notice" = notice
+div class="microposts"
 h1 Micropost
+= link_to 'New Micropost', new_micropost_path
+div class="description"
+- @microposts.each do |micropost|
+  ul
+    li
+      h2 = micropost.user.login
+    li
+      p = micropost.content
+    li
+      div class="post-img"
+        = image_tag micropost.image.url(:thumb, class: "img-thumbnail")
+    li = link_to 'Show', micropost
+    - if can? :update, micropost
+      = link_to 'Edit', edit_micropost_path(micropost)
+    - if can? :destroy, micropost
+      = link_to 'Destroy', micropost, method: :delete, data: {confirm: 'Are you sure?'}
 
-br
- = link_to 'New Micropost', new_micropost_path
- br
 
 
-table id='microposts'
-  - @microposts.each do |micropost|
-    tr
-      td = micropost.user.login
-      td = image_tag micropost.image.url(:thumb, class: "img-thumbnail")
-      td = micropost.content
-      td = link_to 'Show', micropost
-      - if can? :update, micropost
-        td = link_to 'Edit', edit_micropost_path(micropost)
-      - if can? :destroy, micropost
-        td = link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+
+
+
+
 
 
 
