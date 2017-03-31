@@ -1,32 +1,63 @@
-p
-  strong User:
-  =@micropost.user.login
-p
-  strong
-  =@micropost.photo
-p
-  strong Content:
-  =@micropost.content
+/p
+/  strong User:
+/  =@micropost.user.login
+/p
+/  strong
+/  =@micropost.photo
+/p
+/  strong Content:
+/  =@micropost.content
+/
+/
+/-if can? :update, @micropost
+/  = link_to 'Edit', edit_micropost_path(@micropost)
+/br
+/  =link_to 'Back', microposts_path
+/
+/= form_for [@micropost, @micropost.comments.build],remote: true do |f|
+/  div class="field"
+/   =f.label :body
+/   =f.text_area :body
+/
+/  div class="field"
+/    =image_tag @micropost.image.url(:thumb), class: 'img-show' if @micropost.image?
+/
+/  div class="actions"
+/  = f.submit
+/
+/div id="comments"
+/  = render @micropost.comments
+div class="microposts"
+  ul
+    li =@micropost.user.login
+    li =image_tag @micropost.image.url(:thumb), class: 'img-show' if @micropost.image?
+    li =@micropost.content
+    li
+      div class="link-micropost"
+        - if can? :update, @micropost
+          = link_to 'Edit', edit_micropost_path(@micropost)
+          br
+          = link_to 'Back', microposts_path
+
+  div class="comment-container"
+    = form_for [@micropost, @micropost.comments.build], remote: true do |f|
+      div class="field"
+      = f.text_area :body
+      div class="action"
+      = f.submit
+
+  div id="all-comments"
+    = render @micropost.comments
 
 
--if can? :update, @micropost
-  = link_to 'Edit', edit_micropost_path(@micropost)
-br
-  =link_to 'Back', microposts_path
 
-= form_for [@micropost, @micropost.comments.build],remote: true do |f|
-  div class="field"
-   =f.label :body
-   =f.text_area :body
 
-  div class="field"
-    =image_tag @micropost.image.url(:thumb), class: 'img-show' if @micropost.image?
 
-  div class="actions"
-  = f.submit
 
-div id="comments"
-  = render @micropost.comments
+
+
+
+
 
 
 

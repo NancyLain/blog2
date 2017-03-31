@@ -1,11 +1,12 @@
 h1 Editing Comment
+div class="comment-container"
+  = form_for ([@micropost, @comment]) do |f|
+    div class="field"
+      = f.text_area :body
+    div class="actions"
+      = f.submit
+  = link_to 'Back', edit_micropost_comment_path
 
-=form_for ([@micropost, @comment]) do |f|
-  div class="field"
-    = f.label :body
-    = f.text_area :body
-  div class="actions"
-    = f.submit
-= link_to 'Back', edit_micropost_comment_path
+
 
 
