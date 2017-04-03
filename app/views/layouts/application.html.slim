@@ -7,20 +7,26 @@ html
     = csrf_meta_tags
 
   body
-    = render 'layouts/header'
     p class="notice"
     = notice
     p class="alert"
     = alert
 
-    - if user_signed_in?
-      span Здравствуйте,
-      = current_user.email
-      = link_to 'Выйти', destroy_user_session_path, :method => :delete
-    - else
+    .page-wrapper
+
+      header
+        =render 'layouts/header'
+
+
+      - if user_signed_in?
+        span Здравствуйте,
+        = current_user.email
+        = link_to 'Выйти', destroy_user_session_path, :method => :delete
+
+      - else
         = link_to 'Войти', new_user_session_path
         = link_to 'Зарегистрироваться', new_user_registration_path
 
-  div class="container"
-  == yield
+      .container
+        == yield
 
