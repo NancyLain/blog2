@@ -52,38 +52,41 @@
       h4
         flex: 1 1 150px
 
-.new_micropost, .edit_micropost
+.new_micropost, .edit_micropost, .new_comment, .edit_comment
+  width: 50%
   background: #008B8B
   padding: 10px
   border-radius: 5px
   margin: 45px auto
   display: flex
   flex-direction: column
-  //justify-content: center
-  align-items: baseline
+  align-items: stretch
 
-
-  .text-field
-    width: 50%
-    textarea
-      padding: 15px
-      margin: 5px
-      background: #FFD700
-      border-radius: 3px
-      width: 100%
   .field
     padding: 15px
     margin: 5px
     background: #FFD700
     border-radius: 3px
-    width: 50%
+
 
   .actions
     padding: 15px
     margin: 5px
     background: #FFD700
     border-radius: 3px
-    width: 50%
+
+  textarea
+    padding: 15px
+    margin: 5px
+    background: #FFD700
+    border-radius: 3px
+    width: calc(100% - 40px)
+
+
+
+
+
+
 
 
 
