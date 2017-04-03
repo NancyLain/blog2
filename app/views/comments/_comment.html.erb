@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <ul id="comment">
   <li><%= comment.body %></li>
-  <li><%= comment.user_id %> </li>
+  <li><%= comment.user.email if comment.user %> </li>
 
   <% if can? :update, comment %>
   <li><%= link_to "Edit" , edit_micropost_comment_path(comment.micropost, comment) %> </li>
@@ -10,4 +10,4 @@
   <li> <%= link_to "Delete" , micropost_comment_path(comment.micropost, comment), method: :delete, data: {confirm: "Are you sure ?"}, :remote => true, :class => 'delete_comment'  %> </li>
   <% end %>
   </ul>
-  <% end %>
+<% end %>

@@ -1,0 +1,14 @@
+ul
+  li
+    div class="post-img"
+      = image_tag micropost.image.url(:thumb, class: "img-thumbnail")
+  li
+    div class="text"
+    h2 = micropost.user.login
+    p = micropost.content
+    div class="link-micropost"
+      h4 = link_to 'Show', controller: "microposts", action: "show", id: micropost.id
+      - if can? :update, micropost
+        h4 = link_to 'Edit', edit_micropost_path(micropost)
+      - if can? :destroy, micropost
+        h4 = link_to 'Destroy', micropost, method: :delete, data: {confirm: 'Are you sure?'}

@@ -1,38 +1,119 @@
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-//.microposts
-//  ul
-//    list-style-type: none
-//    padding: 0
-//    display: flex
-//    flex-direction: row
-//
-//    li
-//      font-family: 'Ruda', sans-serif
-//      margin: 0 5px
-//
-//
-//      p
-//        font-size: 16px
-//        font-family: fantasy
-//      a
-//        background-color: #333
-//        color: #FFF
-//        display: block
-//        font-family: 'Pontano Sans', sans-serif
-//        font-size: 14px
-//        padding: 14px
-//        text-align: center
-//        text-decoration: none
-//        text-transform: uppercase
-//        width: 100%
-//        height: 10px
-//
-//      a:hover
-//        background-color: #555
-//    .post-img
-//      max-width: 100%
+
+.micropost-holder
+  margin: 20px auto
+  border: 1px solid
+  padding: 0
+  display: flex
+  justify-content: center // как будут рапределяться блоки по глайной оси
+  align-items: stretch //растягивание по поперечной оси
+  flex-flow: row wrap
+
+  .title
+    flex-basis: 100%
+    margin: 20px
+    text-align: center
+
+  ul
+    list-style-type: none
+    display: flex
+    flex: 1 1 200px
+    flex-flow: row wrap
+    text-align: center
+    margin: 20px
+    padding: 10px
+    border: 1px solid
+    border-radius: 3px
+    //flex-basis: calc(33% - 4px)
+
+    .text
+      margin: 10px
+      flex: 1 1 150px
+
+
+    .post-img
+      margin: 10px
+      flex: 1 1 200px
+      img
+        width: 100%
+        height: auto
+
+    .link-micropost
+      border: solid
+      margin: 10px
+      //flex: 1 1 // flex-grow, flex-shrink, flex-basis
+      flex-grow: 1
+      flex-basis: 150px
+      display: flex
+      flex-shrink: 0
+
+      h4
+        flex: 1 1 150px
+
+.new_micropost
+  background: #008B8B
+  padding: 10px
+  border-radius: 5px
+  margin: 45px auto
+  display: flex
+  flex-direction: column
+  //justify-content: center
+  align-items: baseline
+  .text-field
+    width: 50%
+    textarea
+      padding: 15px
+      margin: 5px
+      background: #FFD700
+      border-radius: 3px
+      width: 100%
+
+
+  .field
+    padding: 15px
+    margin: 5px
+    background: #FFD700
+    border-radius: 3px
+    width: 50%
+
+
+  .actions
+    padding: 15px
+    margin: 5px
+    background: #FFD700
+    border-radius: 3px
+    width: 50%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
