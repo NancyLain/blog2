@@ -43,18 +43,18 @@
     .link-micropost
       border: solid
       margin: 10px
-      //flex: 1 1 // flex-grow, flex-shrink, flex-basis
+      display: flex
+      ////flex: 1 1 // flex-grow, flex-shrink, flex-basis
       flex-grow: 1
       flex-basis: 150px
-      display: flex
       flex-shrink: 0
-
       h4
         flex: 1 1 150px
 
+
+
 .new_micropost, .edit_micropost, .new_comment, .edit_comment
   width: 50%
-  background: #008B8B
   padding: 10px
   border-radius: 5px
   margin: 45px auto
@@ -65,22 +65,26 @@
   .field
     padding: 15px
     margin: 5px
-    background: #FFD700
     border-radius: 3px
 
 
   .actions
     padding: 15px
     margin: 5px
-    background: #FFD700
     border-radius: 3px
 
   textarea
     padding: 15px
     margin: 5px
-    background: #FFD700
     border-radius: 3px
     width: calc(100% - 40px)
+
+.title
+  flex-basis: 100%
+  margin: 20px
+  text-align: center
+
+
 
 
 

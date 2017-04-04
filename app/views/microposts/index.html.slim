@@ -3,6 +3,7 @@ div class="micropost-holder"
     h1 Micropost
     = link_to 'New Micropost', new_micropost_path
 
+
   - @microposts.each do |micropost|
     = render 'microposts/micropost', micropost: micropost
 

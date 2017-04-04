@@ -17,16 +17,16 @@ html
       header
         = render 'layouts/header'
 
+        /.check-in
+        /  - if user_signed_in?
+        /    h3 Здравствуйте, = current_user.email
+        /    h3 = link_to 'Выйти', destroy_user_session_path, :method => :delete
+        /
+        /  - else
+        /    = link_to 'Войти', new_user_session_path
+        /    = link_to 'Зарегистрироваться', new_user_registration_path
 
-      - if user_signed_in?
-        span Здравствуйте,
-        = current_user.email
-        = link_to 'Выйти', destroy_user_session_path, :method => :delete
 
-      - else
-        = link_to 'Войти', new_user_session_path
-        = link_to 'Зарегистрироваться', new_user_registration_path
 
       .container
         == yield
-
