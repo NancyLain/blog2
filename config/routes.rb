@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   get 'results', to: 'results#index', as: 'results'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  resource :user, only: [:edit, :show] do
+    collection do
+      patch 'update_password'
+    end
+  end
+  get 'users/index'
 end

@@ -5,11 +5,12 @@ nav
     li = link_to "About", '#'
 
     -if user_signed_in?
-        h3 Здравствуйте, = current_user.email
         li = link_to 'Выйти', destroy_user_session_path, :method => :delete
+        li = link_to 'Account', user_path
     - else
         li = link_to 'Войти', new_user_session_path
         li = link_to 'Зарегистрироваться', new_user_registration_path
+
 
 
 

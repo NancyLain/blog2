@@ -1,0 +1,14 @@
+ul
+  li = @user.email
+  li = @user.login
+  li = @user.full_name
+  li = @user.birthday
+  li = @user.address
+  li = @user.city
+  li = @user.state
+  li = @user.country
+  li = @user.zip
+  li = link_to 'Edit', edit_user_path
+  li = link_to 'Back', root_path
+  li = link_to 'all users', users_index_path
+
