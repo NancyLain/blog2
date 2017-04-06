@@ -1,4 +1,7 @@
 - @users.each do |user|
   ul
-    li = user.login
+    li = link_to user.login, controller: "users", action: "show_user", id: user.id
     li = user.email
+
+
+

@@ -1,14 +1,38 @@
-ul
-  li = @user.email
-  li = @user.login
-  li = @user.full_name
-  li = @user.birthday
-  li = @user.address
-  li = @user.city
-  li = @user.state
-  li = @user.country
-  li = @user.zip
-  li = link_to 'Edit', edit_user_path
-  li = link_to 'Back', root_path
-  li = link_to 'all users', users_index_path
+.title
+  h2 Моя страница
+
+table class="table"
+  tr
+    td E­mail
+    td = @user.email
+  tr
+    td Login
+    td = @user.login
+  tr
+    td Full name
+    td = @user.full_name
+  tr
+    td Birthday
+    td = @user.birthday
+  tr
+    td Address
+    td = @user.address
+  tr
+    td City
+    td = @user.city
+  tr
+    td State
+    td = @user.state
+  tr
+    td Country
+    td = @user.country
+  tr
+    td Zip
+    td = @user.zip
+
+h4 = link_to 'Edit', edit_user_path
+h4 = link_to 'Back', root_path
+h4 = link_to 'all users', users_index_path
+
+
 

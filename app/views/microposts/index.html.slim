@@ -1,6 +1,15 @@
 div class="micropost-holder"
+
+  .search
+    = form_tag results_path, method: :get, role: 'search' do
+      = text_field_tag :query, params[:query]
+      = submit_tag "Искать", name: nil
+
+
   .title
     h1 Micropost
+
+
     = link_to 'New Micropost', new_micropost_path
 
 

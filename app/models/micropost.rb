@@ -5,7 +5,13 @@ class Micropost < ApplicationRecord
   has_many :comments
   mount_uploader :image, ImageUploader
   include PgSearch
-  pg_search_scope :search_everywhere, against: [:content]
   resourcify
+  pg_search_scope :full_search,
+                  :against => [
+                      :content
+                  ],
+                  :associated_against => {
+                      :user => [:login, :email]
+                  }
 
 end

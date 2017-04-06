@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   def index
-    @search_results = Micropost.search_everywhere(params[:query])
+
+    @search_results = Micropost.full_search(params[:query])
   end
 end

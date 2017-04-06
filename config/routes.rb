@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'static_pages/home'
   root 'microposts#index'
 
   #get 'microposts/:micropost_id/comments/:comment_id/edit/', to: 'comments#edit'
@@ -18,4 +17,5 @@ Rails.application.routes.draw do
     end
   end
   get 'users/index'
+  get 'users/show_user'
 end

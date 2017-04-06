@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:show_user]
 
   def index
     @users = User.all
@@ -13,6 +14,11 @@ class UsersController < ApplicationController
    @user = User.find(current_user.id)
   end
 
+  def show_user
+
+  end
+
+
   def update_password
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
@@ -22,6 +28,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def user_params
