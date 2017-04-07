@@ -10,6 +10,10 @@ class UsersController < ApplicationController
    @user = current_user
   end
 
+  def edit_profile
+    @user = current_user
+  end
+
   def show
    @user = User.find(current_user.id)
   end
@@ -30,6 +34,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_profile
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      redirect_to root_path
+  else
+    render 'edit_profile'
+      end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
@@ -38,7 +51,7 @@ class UsersController < ApplicationController
 
   def user_params
     # NOTE: Using `strong_parameters` gem
-    params.require(:user).permit(:password, :password_confirmation, :current_password, :login)
+    params.require(:user).permit(:password, :password_confirmation, :current_password, :login, :full_name, :birthday, :address, :city, :state, :country,:zip)
   end
 
 end

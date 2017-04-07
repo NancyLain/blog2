@@ -3,6 +3,10 @@ ul
     div class="post-img"
       = image_tag micropost.image.url(:thumb, class: "img-thumbnail")
   li
+    div class="tags"
+      = render micropost.tags
+
+  li
     div class="text"
     h2 = micropost.user.login
     p = micropost.content
@@ -12,3 +16,4 @@ ul
         h4 = link_to 'Edit', edit_micropost_path(micropost)
       - if can? :destroy, micropost
         h4 = link_to 'Destroy', micropost, method: :delete, data: {confirm: 'Are you sure?'}
+

@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   resource :user, only: [:edit, :show] do
     collection do
       patch 'update_password'
+      patch 'update_profile'
     end
   end
   get 'users/index'
   get 'users/show_user'
+  get 'users/edit_profile'
+  resources :tags, only: [:index, :show]
 end

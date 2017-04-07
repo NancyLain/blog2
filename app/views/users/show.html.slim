@@ -30,7 +30,8 @@ table class="table"
     td Zip
     td = @user.zip
 
-h4 = link_to 'Edit', edit_user_path
+h4 = link_to 'Change password', edit_user_path
+h4 = link_to 'Change profile', users_edit_profile_path
 h4 = link_to 'Back', root_path
 h4 = link_to 'all users', users_index_path
 
