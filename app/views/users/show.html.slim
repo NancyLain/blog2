@@ -1,5 +1,5 @@
 .title
-  h2 Моя страница
+  h2 My account
 
 table class="table"
   tr
@@ -30,10 +30,15 @@ table class="table"
     td Zip
     td = @user.zip
 
-h4 = link_to 'Change password', edit_user_path
-h4 = link_to 'Change profile', users_edit_profile_path
-h4 = link_to 'Back', root_path
-h4 = link_to 'all users', users_index_path
+  tr
+    td
+      .link = link_to 'Change password', edit_user_path
+    td
+      .link = link_to 'Change profile', users_edit_profile_path
+
+
+
+
 
 
 

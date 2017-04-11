@@ -2,7 +2,7 @@ class Micropost < ApplicationRecord
   validates :content, presence: true
   validates :image, presence: true
   belongs_to :user
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   mount_uploader :image, ImageUploader
   include PgSearch
   resourcify

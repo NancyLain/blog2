@@ -1,7 +1,25 @@
-- @users.each do |user|
-  ul
-    li = link_to user.login, controller: "users", action: "show_user", id: user.id
-    li = user.email
+/- @users.each do |user|
+/  ul
+/    li = link_to user.login, controller: "users", action: "show_user", id: user.id
+/    li = user.email
+table class="table"
+  thead
+    tr
+      th Login
+      th Name
+      th Email
+      th Show
+  - @users.each do |user|
+    tr
+      td= user.login
+      td= user.full_name
+      td= user.email
+      td= link_to "View", controller: "users", action: "show_user", id: user.id
+
+
+
+
+
 
 
 

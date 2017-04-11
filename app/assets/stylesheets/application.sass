@@ -18,12 +18,28 @@ body, html
   margin: 0
   height: 100%
 
+h1, h2, h3, h4, h5, h6
+  font-weight: 500
+  font-family: 'Raleway', sans-serif
+
+
+p
+  color: #444444
+  line-height: 32px
+  font-family: 'Raleway', sans-serif
+  font-size: 20px
+  font-weight: 100
+
+
+
 header
   border: solid
   padding: 50px 0 30px
   display: flex
   justify-content: flex-end
   align-items: center
+  width: 80%
+  margin: 0 auto
 
 
   ul
@@ -56,13 +72,16 @@ header
 
 
 .container
+  width: 80%
+  margin: 0 auto
   border: solid
   flex-grow: 1
   line-height: 1.8
 
 table.table
-  width: 100%
-
+  width: 70%
+  padding: 15px
+  margin: 0 auto
   tr
     border-bottom: 1px solid #DDD
     display: flex
@@ -71,16 +90,39 @@ table.table
     margin: 0.5em 0
     //border: 1px solid rgba(3, 3, 3, 0.2)
 
-  td
+
+
+  td, th
     text-align: left
     padding: 0.25em
     flex: 1 1 150px
     //border-right: 0.5px solid rgba( 3, 3, 3, 0.2)
+    margin: 0 auto
 
 .title
   flex-basis: 100%
   margin: 20px
   text-align: center
+
+.link
+  a
+    background-color: #BDB76B
+    color: #FFFAFA
+    font-family: 'Muli', sans-serif
+    font-weight: 300
+    //border-radius: 8px
+    padding: 10px 10px
+    text-decoration: none
+    &:hover
+      color: #556B2F
+
+
+
+
+
+
+
+
 
 
 

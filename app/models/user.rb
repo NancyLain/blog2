@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :confirmable, :validatable
-  has_many :microposts
-  has_many :comments
+  has_many :microposts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
 
 end
