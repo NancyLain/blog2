@@ -16,5 +16,11 @@ class User < ApplicationRecord
   has_many :microposts, :dependent => :destroy
   has_many :comments, :dependent => :destroy
 
+  after_create :add_default_role
+
+  def add_default_role
+    self.add_role(:user)
+  end
+
 
 end

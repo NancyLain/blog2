@@ -30,3 +30,22 @@ table class="table"
       td Zip
       td = @user.zip
 
+  ul#roles
+    - Role.all.each do |role|:
+      li data-title=role.name = role.name
+
+  javascript:
+    $('#roles').on('click', 'li', function () {
+        var role = $(this).data('title')
+        //$.ajax({
+        //    type:
+        //    url:
+        //    data: role,
+        //        success: function (html) {
+        //
+        //}
+
+
+        })
+
+    })

@@ -1,14 +1,14 @@
 div class="micropost-holder"
+
+
+  .title
+
+    h1 = link_to 'New Micropost', new_micropost_path
+
   .search
     = form_tag results_path, method: :get, role: 'search' do
       = text_field_tag :query, params[:query]
       = submit_tag "Search", name: nil
-
-  .title
-    h1 Micropost
-
-
-    = link_to 'New Micropost', new_micropost_path
 
 
   - @microposts.each do |micropost|
