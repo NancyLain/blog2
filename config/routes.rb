@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get 'users/show_user'
   get 'users/edit_profile'
   resources :tags, only: [:index, :show]
+  post 'users/set_role'
+  get 'users/set_role'
 end
