@@ -17,12 +17,14 @@
           h4 = link_to 'Destroy', @micropost, method: :delete, data: {confirm: 'Are you sure?'}
         h4 = link_to 'Back', microposts_path
 
-
-= form_for [@micropost, @micropost.comments.build], remote: true do |f|
+- if can? :create, @micropost
+  = form_for [@micropost, @micropost.comments.build], remote: true do |f|
     div class="field"
       = f.text_area :body
     div class="actions"
       = f.submit
+
+
 
 
 div id="comments"

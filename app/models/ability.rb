@@ -6,12 +6,11 @@ class Ability
 
     user ||= User.new
     if user.has_role? :admin
-        can :manage, :all
+        can :manage, Role
     elsif user.has_role? :moderator
-        can :manage, :Micropost
-        can :manage, :Comment
-        can :read, :User
-    else
+        can :destroy, Micropost
+        can :destroy, Comment
+    elsif user.has_role? :user
         can :update, Micropost do |micropost|
           micropost.user == user
         end
@@ -27,6 +26,8 @@ class Ability
         can :create, Micropost
         can :create, Comment
         can :read, :all
+    else
+      can :read, :all
     end
 
     #

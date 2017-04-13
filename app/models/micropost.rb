@@ -1,5 +1,5 @@
 class Micropost < ApplicationRecord
-  validates :content, presence: true
+  validates :content, presence: true, length: { minimum: 3,  maximum: 1000 }
   validates :image, presence: true
   belongs_to :user
   has_many :comments, :dependent => :destroy

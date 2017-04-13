@@ -16,7 +16,7 @@ table class="table" id='user_table' data-id=(@user.id)
     td Birthday
     td = @user.birthday
   tr
-    td Address
+    td Addres
     td = @user.address
   tr
     td City
@@ -30,67 +30,18 @@ table class="table" id='user_table' data-id=(@user.id)
   tr
     td Zip
     td = @user.zip
-
-  /ul#roles
-  /  - Role.all.each do |role|
-  /    li data-id=role.id = role.name
-  /javascript:
-  //    $('#roles').on('click', 'li', function () {
-  //        var roleId = $(this).data('id');
-  //        var userId = $('#user_table').data('id');
-  //        console.log("User " + userId);
-  //        console.log("Role " + roleId);
-  //
-  //        console.log(roleId);
-  //        $.ajax({
-  //            url: "http://localhost:3000/users/set_role",
-  //            type:'post',
-  //            data: {
-  //                user_id: userId,
-  //                role_id: roleId
-  //            },
-  //            success: function (data) {
-  //              if (data.role_changed === 'true'){
-  //                  alert("Роль успешно изменена");
-  //              }
-  //
-  //            },
-  //            error: function (error) {
-  //                  console.log(error);
-  //            }
-  //        });
-  //       });
+    td = @user.roles_name
 
 
-  select#roles
-    option value=":user" User
-    option value=":moderator" Moderator
+  - if can? :manage, Role
+    h2 = @user.roles_name
+    select#roles
+      option value="user" User
+      option value="moderator" Moderator
 
-  button id='js-button' Нажать
+    button#set-button Create
+    button#remove_button Remove
 
-  javascript:
 
 
-      $('#js-button').on('click', function () {
-          var role_name = $("#roles").val();
-          var userId = $('#user_table').data('id');
-          console.log(role_name);
-          $.ajax({
-              url: "http://localhost:3000/users/set_role",
-              type: 'post',
-              data: {
-                  user_id: userId,
-                  role_id: role_name
-              },
-              success: function (data) {
-                  if (data.role_changed === 'true') {
-                      alert("Роль успешно изменена");
-                  }
 
-              },
-              error: function (error) {
-                  console.log(error);
-              }
-          });
-
-      });

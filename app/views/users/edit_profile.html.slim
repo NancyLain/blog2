@@ -8,7 +8,8 @@
     = f.text_field :full_name
   .field
     = f.label :birthday, "birthday"
-    = f.text_field :birthday
+    = f.date_select :birthday, :start_year=>1900
+
   .field
     = f.label :address, "address"
     = f.text_field :address

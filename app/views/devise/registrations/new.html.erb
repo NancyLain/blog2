@@ -28,8 +28,11 @@
     <div class="field"><%= f.label :full_name %><br />
       <%= f.text_field :full_name, autofocus: true %>
     </div>
+    <!--<div class="field"><%= f.label :birthday %><br />-->
+      <!--<%= f.text_field :birthday, autofocus: true %>-->
+    <!--</div>-->
     <div class="field"><%= f.label :birthday %><br />
-      <%= f.text_field :birthday, autofocus: true %>
+    <%=  f.date_select :birthday, :start_year=>1900 %>
     </div>
     <div class="field"><%= f.label :address %><br />
       <%= f.text_field :address, autofocus: true %>

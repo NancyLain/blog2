@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   post 'users/set_role'
   get 'users/set_role'
+  post 'users/remove_role'
 end

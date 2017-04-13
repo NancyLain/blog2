@@ -47,18 +47,21 @@ class UsersController < ApplicationController
     puts "="*100
     p params
 
-    #puts params[:roleId]
-    # User.last.add_role(:@role_id)
-    #User.find(params[:user_id]).add_role(@role_id)
-    # User.find(params[:user_id]).remove_role(params[:roleId])
-
     role_parameter = params[:role_id]
-    user_parameter = params[:user_id]
-    #User.find(params[:user_id]).add_role(params[:roleId])
     User.find(params[:user_id]).add_role(role_parameter)
     role_changed = true
 
     render json: { role_changed: role_changed}
+
+  end
+
+  def remove_role
+    puts "="*100
+    p params
+    role_parameter = params[:role_id]
+    User.find(params[:user_id]).remove_role(role_parameter)
+
+
 
   end
 
